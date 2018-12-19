@@ -1,0 +1,82 @@
+<script type="text/javascript">
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-编辑*/
+    function admin_role_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+
+    //设置存储 ajax数据 缓存数据
+    var cucat_attribute = new Array();
+    //收集下拉 属性值
+    function show_type(){
+
+        //收集id
+        var type_id = $('[name=type_id]').val();
+
+        /**
+         * 当此时点击属性 没有缓存 类型为undefined 如果此时属性有缓存 类型为 string
+         *
+         * */
+        //判断是否有缓存
+        if(typeof cucat_attribute[type_id] != "undefined")
+        {
+
+            //存在缓存 直调用缓存
+            $('tbody').html(cucat_attribute[type_id]);
+
+        }else
+        {
+            //console.log(typeof cucat_attribute[type_id]);
+           //不存在缓存 重新请求
+            $.ajax({
+                url:"{:url('admin/attribute/getAttributeType')}",
+                data:"type_id="+type_id,
+                dataType:'json',
+                type:'get',
+                success:function (msg) {
+                    //定义保存 html 变量
+                    var htmlcont = "";
+                    //遍历返回数据
+                    $.each(msg,function(n,v){
+
+                        htmlcont += '<tr class = "text-c">' +
+                            '<td><input type="checkbox" value="" name=""></td>' +
+                            '<td>'+v.attr_id+'</td>' +
+                            '<td>'+v.attr_name+'</td>' +
+                            '<td>'+v.type.type_name+'</td>' +
+                            '<td>'+(v.attr_sel == 'only' ? '单选':'复选')+'</td>' +
+                            '<td>'+v.attr_vals+'</td>' +
+                            '<td class="f-14">' +
+                            '<a title="编辑" href="javascript:;"  style="text-decoration:none">' +
+                            '<i class="Hui-iconfont">&#xe6df;</i></a>' +
+                            '<a title="删除" href="javascript:; class="ml-5" style="text-decoration:none">' +
+                            '<i class="Hui-iconfont">&#xe6e2;</i>' +
+                            '</a>' +
+                            '</td>' +
+                            '</tr>'
+                    });
+
+                    //制作缓存
+                    cucat_attribute[type_id] = htmlcont;
+
+                    //将拼接html
+                    $('tbody').html(htmlcont);
+
+                }
+            });
+
+        }
+
+
+    }
+
+    //当页面刷新
+    $(function () {
+        //自动调用一次方法
+        show_type();
+    })
+
+</script>

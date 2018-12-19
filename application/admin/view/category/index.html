@@ -1,0 +1,24 @@
+{include file='public/head'}
+
+<title>商品分类</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品中心 <span class="c-gray en">&gt;</span> 商品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+    <div style="width: 400px;height: 510px;float: left;cursor: pointer">
+        <h3 onclick="add_root()">添加根节点</h3>
+    </div>
+</div>
+
+{include file='category/js_index'}
+{include file='public/foot'}
+
+<style type="text/css">
+  .ztree li span.button.add {
+      margin-left: 2px;
+      margin-right:-1px;
+      background-position: -144px 0;
+      vertical-align: top;
+      *vartical-align:middle
+  }
+</style>

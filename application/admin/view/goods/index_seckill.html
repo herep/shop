@@ -1,0 +1,72 @@
+{include file='public/head'}
+<title>商品管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品中心 <span class="c-gray en">&gt;</span> 商品管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+    {/*
+    {literal}
+    <div class="text-c"> 日期范围：
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+        -
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
+        <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+    </div>
+    {/literal}
+    */}
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加商品','{:url (\'acc\')}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+            <tr class="text-c">
+                <th width="25"><input type="checkbox" name="" value=""></th>
+                <th width="80">ID</th>
+                <th width="100">商品名称</th>
+                <th width="40">秒杀价格</th>
+                <th width="90">秒杀数量</th>
+                <th width="150">开始时间</th>
+                <th width="120">结束时间</th>
+                <th width="50">距离结束</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name='infos' id='info'}
+            <tr class="text-c goodsseckill" id="goods_{$info.goods_id}">
+                <td><input type="checkbox" value="1" name=""></td>
+                <td>{$info.goods_id}</td>
+                <td>{$info.goods_name}</td>
+                <td>{$info.goods_price_seckill}</td>
+                <td>{$info.goods_number_seckill}</td>
+                <td>{:date('Y-m-d H:i:s',$info.start_time)}</td>
+                <td>{:date('Y-m-d H:i:s',$info.end_time)}
+                    <input type="hidden" id="end_time_{$info.goods_id}" value="{$info.end_time}">
+                </td>
+                <td id="back_time_{$info.goods_id}">倒计时</td>
+            </tr>
+            {/volist}
+            <tr><td colspan="100">{$page}</td></td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--请在下方写此页面业务相关的脚本-->
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:#5a98de;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+    }
+    .pagination li a{color:white;}
+    .pagination li.active{background-color:white;color:gray;}
+    .pagination li.disabled{background-color:white;color:gray;}
+</style>
+
+
+{include file='public/foot'}
+{include file='goods/js_index_seckill'/}

@@ -1,0 +1,68 @@
+---------------------------------------------------------------
+[ 2018-12-15T11:36:35+08:00 ] 127.0.0.1 GET /home/shop/return_url?charset=UTF-8&out_trade_no=pshop5c04c6829817f20181203140034&method=alipay.trade.page.pay.return&total_amount=100.00&sign=MPup2liI%2FDNtxAAsHvAUU%2BX7CIh%2Bd8ejYoO9yES%2FQEpGtr%2Bfo5qUIZOxTvTUkOjs9Hqu23GPC4FQTQ2Eo5%2BwP%2BfLu39i%2BDpn%2F9%2BaRl6BdcOmJd3%2BMV%2BLTzsGuF6%2FSnEUFWXvto3aSTxcgVZBmt91sO0KrmtsSTUAyEh90IqtDI5p%2BElMOWl2iSBBWJfPm3cE0oU251EEnuABBDHmNEXiHQcEo1yr%2FvA0QUHDMI8sNj2SMytd1jJx%2B69H6J2is8iTCjj7JAk0FmNWISB%2BCTMz1%2B8BVSD2zWLdBrL9YomDgL6LmVgHFdcvV4zT7uR1zk%2B09D1VBTcqMAsQXnP%2Bx5CloA%3D%3D&trade_no=2018121522001417660500640130&auth_app_id=2016092300578135&version=1.0&app_id=2016092300578135&sign_type=RSA2&seller_id=2088102176918661&timestamp=2018-12-15+11%3A36%3A20
+[ info ] www.pygshop.com/home/shop/return_url?charset=UTF-8&out_trade_no=pshop5c04c6829817f20181203140034&method=alipay.trade.page.pay.return&total_amount=100.00&sign=MPup2liI%2FDNtxAAsHvAUU%2BX7CIh%2Bd8ejYoO9yES%2FQEpGtr%2Bfo5qUIZOxTvTUkOjs9Hqu23GPC4FQTQ2Eo5%2BwP%2BfLu39i%2BDpn%2F9%2BaRl6BdcOmJd3%2BMV%2BLTzsGuF6%2FSnEUFWXvto3aSTxcgVZBmt91sO0KrmtsSTUAyEh90IqtDI5p%2BElMOWl2iSBBWJfPm3cE0oU251EEnuABBDHmNEXiHQcEo1yr%2FvA0QUHDMI8sNj2SMytd1jJx%2B69H6J2is8iTCjj7JAk0FmNWISB%2BCTMz1%2B8BVSD2zWLdBrL9YomDgL6LmVgHFdcvV4zT7uR1zk%2B09D1VBTcqMAsQXnP%2Bx5CloA%3D%3D&trade_no=2018121522001417660500640130&auth_app_id=2016092300578135&version=1.0&app_id=2016092300578135&sign_type=RSA2&seller_id=2088102176918661&timestamp=2018-12-15+11%3A36%3A20 [运行时间：3.453945s][吞吐率：0.29req/s] [内存消耗：1,009.52kb] [文件加载：72]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'return_url',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://unitradeprod.alipaydev.com/acq/cashierReturn.htm?sign=K1iSL1gn5tqoqfIBRBxIrbd5I24Gfnt6W3LkPSB7OA7lsiZ9IxY4%252Fjxya%252BpP5WjU%252FoC0iPrwlFuHVjEVOSQERBRz&outTradeNo=pshop5c04c6829817f20181203140034&pid=2088102176918661&type=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  '/home/shop/return_url' => '',
+  'charset' => 'UTF-8',
+  'out_trade_no' => 'pshop5c04c6829817f20181203140034',
+  'method' => 'alipay.trade.page.pay.return',
+  'total_amount' => '100.00',
+  'sign' => 'MPup2liI/DNtxAAsHvAUU+X7CIh+d8ejYoO9yES/QEpGtr+fo5qUIZOxTvTUkOjs9Hqu23GPC4FQTQ2Eo5+wP+fLu39i+Dpn/9+aRl6BdcOmJd3+MV+LTzsGuF6/SnEUFWXvto3aSTxcgVZBmt91sO0KrmtsSTUAyEh90IqtDI5p+ElMOWl2iSBBWJfPm3cE0oU251EEnuABBDHmNEXiHQcEo1yr/vA0QUHDMI8sNj2SMytd1jJx+69H6J2is8iTCjj7JAk0FmNWISB+CTMz1+8BVSD2zWLdBrL9YomDgL6LmVgHFdcvV4zT7uR1zk+09D1VBTcqMAsQXnP+x5CloA==',
+  'trade_no' => '2018121522001417660500640130',
+  'auth_app_id' => '2016092300578135',
+  'version' => '1.0',
+  'app_id' => '2016092300578135',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102176918661',
+  'timestamp' => '2018-12-15 11:36:20',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\home\controller\ShopController->return_url[ D:\www\pygshop\application\home\controller\ShopController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/home\view\shop\return_url.html [ array (
+  0 => 'out_trade_no',
+  1 => 'trade_no',
+  2 => 'total_amout',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.103312s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_order` [ RunTime:0.043223s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_order` WHERE (  `order_number` = '$out_trade_no'  AND `order_status` = '1' ) AND `sp_order`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001421s ]
+[ sql ] [ SQL ] UPDATE `sp_order`  SET `order_status`='1',`order_trade_no`='2018121522001417660500640130',`order_pay_money`=100  WHERE (  `order_number` = 'pshop5c04c6829817f20181203140034' ) AND `sp_order`.`delete_time` IS NULL [ RunTime:0.001208s ]
+---------------------------------------------------------------
+[ 2018-12-15T11:36:35+08:00 ] 127.0.0.1 GET /home/css/img/icons.png
+[ info ] www.pygshop.com/home/css/img/icons.png [运行时间：0.126832s][吞吐率：7.88req/s] [内存消耗：307.57kb] [文件加载：46]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-15T11:36:39+08:00 ] 127.0.0.1 GET /home/shop/myOrder.html
+[ info ] www.pygshop.com/home/shop/myOrder.html [运行时间：0.034567s][吞吐率：28.93req/s] [内存消耗：307.41kb] [文件加载：46]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File

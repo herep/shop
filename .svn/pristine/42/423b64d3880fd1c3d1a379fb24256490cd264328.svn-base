@@ -1,0 +1,47 @@
+{include file='public/head'}
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="form-member-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>属性名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="ps_name" name="attr_name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">归属类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select  name="type_id">
+                    <option value="" selected>-请选择-</option>
+                    {volist name='typeinfo' id='v'}
+                    <option value="{$v.type_id}">
+                       {$v.type_name}
+                    </option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否可选：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="radio"  value="only"  name="attr_sel" checked="checked">唯一
+                <input type="radio"  value="many"  name="attr_sel" >单选
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>可选值：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea class="input-text" name="attr_vals" id="user-info" style="height:100px;width:300px;"></textarea>
+
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+{include file='attribute/js_acc'}
+{include file='public/foot'}

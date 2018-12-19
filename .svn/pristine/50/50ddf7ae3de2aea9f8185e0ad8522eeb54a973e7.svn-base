@@ -1,0 +1,176 @@
+<?php
+
+namespace cart;
+
+/***
+购物车类
+实现对购物车里边商品的添加、删除操作
+
+购物车商品信息对应的二维数组如下：
+[
+    商品属性唯一uid =>  [
+        'cgoods_attr_uid'       =>'商品属性唯一uid',
+        'cgoods_id'             =>  '商品id',
+        'cgoods_name'           =>  '名称',
+        'cgoods_price'          =>  '单价',
+        'cgoods_number'         =>  '购买数量',
+        'cccgoods_price_sum'    =>  '小计价格',
+        'cgoods_attrs'          =>  '附加属性',
+        'cgoods_logo'           =>  '商品图片'
+    ],
+    商品属性唯一uid =>  [
+        'cgoods_attr_uid'       =>'商品属性唯一uid',
+        'cgoods_id'             =>  '商品id',
+        'cgoods_name'           =>  '名称',
+        'cgoods_price'          =>  '单价',
+        'cgoods_number'         =>  '购买数量',
+        'cccgoods_price_sum'    =>  '小计价格',
+        'cgoods_attrs'          =>  '附加属性',
+        'cgoods_logo'           =>  '商品图片'
+    ],
+    ……
+]
+购物车中，每个商品本身有商品uid，
+其是商品的信息做序列化并md5加密后的内容
+商品uid作用：区分同一个商品的不同属性组合情况
+*/
+
+class SessionCart{
+
+    //购物车的一个属性，用于存放商品信息的，二维数组
+    private $cartInfo = array();
+
+    /**
+    实例化对象的时候自动调用
+    loadData()是获取购物车已经存在的信息并赋予给cartInfo成员
+    */
+    function __construct(){
+        $this -> loadData();
+    }
+
+    /***
+    取得购物车里边已经存放的商品信息
+    该方法是该类里边第一个被执行的方法
+    在类的构造函数里边调用
+     */
+    function loadData(){
+        //cart是购物车信息存储到session中名称
+        //session(?cart):判断session里边是否存在cart，返回boolean值
+        if(session('?cart')){
+            //获取购物车商品信息，并赋予给cartInfo成员属性
+            $this->cartInfo = session('cart');  //Array二维数组
+        }
+    }
+
+    /***
+    将商品添加到购物车里边
+    @param $goods = [
+     * 'cgoods_attr_uid'=>'商品属性唯一id',
+     * 'cgoods_id'=>'商品id',
+     * 'cgoods_name'=>'名称',
+     * 'cgoods_price'=>'单价',
+     * 'cgoods_number'=>'购买数量',
+     * 'cgoods_price_sum'=>'价格小计',
+     * 'cgoods_attrs'=>'商品属性信息',
+     * 'cgoods_logo'=>'商品logo图片']
+     */
+    function add($goods){
+        $cgoods_attr_uid = $goods['cgoods_attr_uid'];  //商品根据“属性排列组合”计算的唯一uid信息
+        //对重复购买的商品要判断(还要判断当前的购物车是否为空，即是否是第一次添加商品)
+        if(!empty($this->cartInfo) && array_key_exists($cgoods_attr_uid, $this->cartInfo)){
+            //相同商品重复购买，数量增加
+            $this->cartInfo[$cgoods_attr_uid]['cgoods_number'] +=1;
+        } else {
+            //把添加的新课程存储给购物车
+            $this->cartInfo[$cgoods_attr_uid] = $goods;
+        }
+        //单件商品的小计价格： 商品单价 * 数量
+        $this->cartInfo[$cgoods_attr_uid]['cgoods_price_sum'] = $this->cartInfo[$cgoods_attr_uid]['cgoods_price'] * $this->cartInfo[$cgoods_attr_uid]['cgoods_number'];
+
+        $this -> saveData();//将维护好的购物车信息重新存入session
+    }
+
+    /***
+    删除购物车里边指定的商品
+    @param $goods_id 被删除商品的id信息
+     */
+    function del($cgoods_attr_uid){
+        if(array_key_exists($cgoods_attr_uid, $this -> cartInfo)){
+            unset($this -> cartInfo[$cgoods_attr_uid]);
+        }
+        $this -> saveData();//将刷新的数据重新存入session
+    }
+
+    /***
+    清空购物车
+     */
+    function delall(){
+        unset($this->cartInfo);  //删除商品的cartInfo的二维数组
+        $this -> saveData();//将刷新的数据重新存入session
+    }
+
+    /**
+     * @param $uid：被修改商品本身的uid
+     * @param $num：被修改商品要求购买的数量
+     * 实现购物车单个商品数量的修改
+     */
+    public function modifynum($cgoods_attr_uid,$num)
+    {
+        //①修改数量
+        $this->cartInfo[$cgoods_attr_uid]['cgoods_number'] = $num;
+        //②修改商品的小计价格： 商品单价 * 数量
+        $this->cartInfo[$cgoods_attr_uid]['cgoods_price_sum'] = $this->cartInfo[$cgoods_attr_uid]['cgoods_price'] * $this->cartInfo[$cgoods_attr_uid]['cgoods_number'];
+
+
+        //把当前商品的小计价格、总商品数量、总商品价格一并返回
+        $numberprice = $this->getNumberPrice();//获得商品总数量、总价格
+        $arr['cnumber']             = $numberprice['cnumber'];
+        $arr['cprice']              = $numberprice['cprice'];
+        $arr['cgoods_price_sum']    = $this->cartInfo[$cgoods_attr_uid]['cgoods_price_sum'];
+
+        //把修改的信息再存储到购物车中
+        $this -> saveData();
+
+        return $arr;
+    }
+    
+
+    /***
+     * 获得购物车的商品总数量和总价格
+     */
+    function getNumberPrice(){
+        $cnumber = 0;//商品总数量
+        $cprice = 0;//商品总价钱
+
+        //获得商品的数量和价格
+        foreach($this->cartInfo as $_k => $_v){
+            $cnumber  += $_v['cgoods_number'];
+            $cprice   += $_v['cgoods_price_sum'];
+        }
+
+        $arr['cnumber'] = $cnumber;
+        $arr['cprice'] = $cprice;
+
+        return $arr;
+    }
+
+    //返回购物车的二维数组商品信息，Array格式返回
+    function getCartInfo(){
+        return $this -> cartInfo;
+    }
+
+    /***
+    将cartInfo数组的商品信息存入购物车
+     */
+    function saveData(){
+        if(!empty($this->cartInfo)){
+            session('cart',$this->cartInfo);  //非空购物车
+        }else{
+            session('cart',null);    //清空购物车
+        }
+    }
+
+
+}
+
+

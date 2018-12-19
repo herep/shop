@@ -1,0 +1,87 @@
+{include file='public/head'}
+<title>商品管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品中心 <span class="c-gray en">&gt;</span> 商品管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+    {/*
+    {literal}
+    <div class="text-c"> 日期范围：
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+        -
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
+        <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+    </div>
+    {/literal}
+    */}
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加商品','{:url (\'acc\')}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+            <tr class="text-c">
+                <th width="25"><input type="checkbox" name="" value=""></th>
+                <th width="80">ID</th>
+                <th width="100">商品名</th>
+                <th width="40">价格</th>
+                <th width="90">数量</th>
+                <th width="150">重量</th>
+                <th width="120">图片</th>
+                <th width="50">促销</th>
+                <th width="50">热卖数量</th>
+                <th width="130">加入时间</th>
+                <th width="100">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name='infos' id='info' mod='2'}
+            {eq name='mod' value='1'}
+            <tr class="text-c" style="background-color: #5bc0de">
+                {else /}
+            <tr class="text-c">
+           {/eq}
+                <td><input type="checkbox" value="1" name=""></td>
+                <td>{$info.goods_id}</td>
+                <td>{$info.goods_name}</td>
+                <td>{$info.goods_price}</td>
+                <td>{$info.goods_number}</td>
+                <td>{$info.goods_weight}</td>
+                <td><img src="{:substr($info.goods_logo,1)}"  alt="" width="100" height="78"></td>
+                <td onclick="change_promotion(this)" id="goods_{$info.goods_id}_{$info.is_promotion}">
+                    {eq name='info.is_promotion' value='0'}
+                    <img src="{:config('admin_temp')}no.gif"  alt="促销" >
+                    {else /}
+                    <img src="{:config('admin_temp')}yes.gif"  alt="不促销" >
+                    {/eq}
+                </td>
+                <td onclick="change_input(this,'{$info.goods_id}')">{$info.goods_salenum}</td>
+                <td>{$info.create_time}</td>
+
+                <td class="td-manage"><a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="member_edit('编辑','{:url(\'alter\',[\'goods_id\'=>$info.goods_id])}','','1000','600')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,{$info.goods_id})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+            </tr>
+            {/volist}
+            <tr><td colspan="100">{$pagelist}</td></td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--请在下方写此页面业务相关的脚本-->
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:#5a98de;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+    }
+    .pagination li a{color:white;}
+    .pagination li.active{background-color:white;color:gray;}
+    .pagination li.disabled{background-color:white;color:gray;}
+</style>
+{include file='goods/js_index'}
+
+{include file='public/foot'}
+

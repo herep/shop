@@ -1,0 +1,158 @@
+<script type="text/javascript">
+
+    /*商品-添加*/
+    function member_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*商品-查看*/
+    function member_show(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*商品-停用*/
+    function member_stop(obj,id){
+        layer.confirm('确认要停用吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
+                    $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+                    $(obj).remove();
+                    layer.msg('已停用!',{icon: 5,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+
+    /*商品-启用*/
+    function member_start(obj,id){
+        layer.confirm('确认要启用吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
+                    $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+                    $(obj).remove();
+                    layer.msg('已启用!',{icon: 6,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+    /*商品-编辑*/
+    function member_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function change_password(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*商品-删除*/
+    function member_del(obj,goods_id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type:'POST',
+                data:'goods_id='+goods_id,
+                url: '{:url("del")}',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+
+    function change_promotion(obj) {
+        //收集 数据
+        var shuju = $(obj).attr('id');
+        var id_pro =shuju.split('_');
+
+       var id = id_pro[1];
+       var is_pro =(id_pro[2] == 0)?1:0;
+
+       //发送请求
+        $.ajax({
+            url:"{:url('change_promotion')}",
+            data:{id:id,is_pro:is_pro},
+            dataType:'json',
+            type:'post',
+            success:function (msg) {
+                if(msg.status == 'success')
+                {
+                    //显示
+                    if(is_pro==0)
+                    {
+                        $(obj).html(' <img src="{:config(\'admin_temp\')}no.gif"  alt="不促销" >');
+                        layer.msg('【非促销模式切换成功】',{icon:6,time:2000})
+                    }else
+                    {
+                        $(obj).html(' <img src="{:config(\'admin_temp\')}yes.gif"  alt="促销" >');
+                        layer.msg('【促销模式切换成功】',{icon:6,time:2000})
+                    }
+
+                    //更新
+                    $(obj).attr('id','goods_'+id+'_'+is_pro);
+                }
+            }
+
+        })
+
+    }
+
+    //点击变成 输入框
+    function change_input(obj,goods_id)
+    {
+        //获取点击 中的值
+        var num = $(obj).text();
+        //改变 输入框
+        var it= $('<input type="number" style="width: 50px">');
+        //将值 赋予输入框
+        it.val(num);
+        $(obj).html(it);
+
+      //输入框 点击事件 失效
+        it.click(function(){return false;});
+       //输入框 获取焦点
+        it.focus();
+       //选中 输入框内容
+        it.select();
+
+        //失去焦点事件
+       it.blur(function(){
+           //获取此时修改后的数据
+           var shuju = $(this).val();
+
+           //发送请求
+           $.ajax({
+               url:"{:url('setsalenum')}",
+               data:{goods_id:goods_id,salenum:shuju},
+               type:'post',
+               dataType:'json',
+               success:function (msg) {
+                  if(msg.status=='success')
+                  {
+                      //将数据 赋予
+                      $(obj).html(shuju);
+                      layer.msg('修改数据成功',{icon:6,time:2000});
+                  }
+               }
+           })
+        })
+
+
+    }
+
+
+</script>

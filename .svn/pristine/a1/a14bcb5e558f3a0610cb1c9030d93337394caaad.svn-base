@@ -1,0 +1,46 @@
+<script type="text/javascript">
+function getDHMS(difftime) {
+    var day = 60*60*24;
+    var hour = 60*60;
+    var minute = 60;
+
+    var days = parseInt(difftime / day);
+    var hours = parseInt(difftime % day / hour);
+    var minutes = parseInt(difftime % hour / minute);
+    var seconds = parseInt(difftime % minute);
+
+
+    return days+'天'+hours+'小时'+minutes+'分钟'+seconds+'秒';
+}
+
+//获取当前时间戳
+<?php $newdata = time(); ?>
+
+//页面加载完毕，给每个秒杀商品设置剩余时间 back_time_{info.goods_id}
+    $(function () {
+        $('.goodsseckill').each(function () {
+            //获得秒杀商品id信息
+            var goods_id = $(this).attr('id').split('_')[1];
+
+
+
+            //获得每个秒杀商品的结束时间
+            var end_time = $('#end_time_'+goods_id).val();
+
+            //保纯当前时间戳
+            var nowtime = <?php echo $newdata ;?>
+
+
+            window.setInterval(function() {
+                 var difftime = end_time - nowtime;
+
+                 var dhms = getDHMS(difftime);
+
+
+                 $('#back_time_'+goods_id).html(dhms);
+
+                 nowtime++;
+             },1000);
+        });
+    });
+</script>

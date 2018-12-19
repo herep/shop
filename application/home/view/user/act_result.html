@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>个人注册</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}all.css" />
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}pages-register.css" />
+</head>
+
+<body>
+<div class="register py-container ">
+    <!--head-->
+    <div class="logoArea">
+        <a href="" class="logo"></a>
+    </div>
+    <!--register-->
+    <div class="registerArea">
+        <h3>注册新用户<span class="go">我有账号，去<a href="login.html" target="_blank">登陆</a></span></h3>
+        <div class="info">
+            {eq name='status' value='success'}
+            <h2>激活账号成功，请<a href="/home/user/login">登录</a>系统</h2>
+            {else /}
+            <h2>激活账号失败，请重新<a href="/home/user/register">注册</a>账号</h2>
+            {/eq}
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+    <!--foot-->
+    <div class="py-container copyright">
+        <ul>
+            <li>关于我们</li>
+            <li>联系我们</li>
+            <li>联系客服</li>
+            <li>商家入驻</li>
+            <li>营销中心</li>
+            <li>手机品优购</li>
+            <li>销售联盟</li>
+            <li>品优购社区</li>
+        </ul>
+        <div class="address">地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100</div>
+        <div class="beian">京ICP备08001421号京公网安备110108007702
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{:config('home_js')}all.js"></script>
+<script type="text/javascript" src="{:config('home_js')}pages/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<script>
+    function del_goods(obj,cgoods_uid)
+    {
+
+        if(confirm('确认要删除该商品吗？'))
+        {
+            //发送请求
+            $.ajax({
+                data:{cgoods_uid:cgoods_uid},
+                type:'post',
+                dataType:'json',
+                url:'{:url("del_goods")}',
+                success:function (msg) {
+                    //将模板 数据更行
+                    //删除商品
+                    $(obj).parents('div.cart-list').remove();
+
+                    //  更新 购物车商品总数量 总价格
+                    $('#sumnumber').html(msg.cnumber);
+                    $('.summoney').html(msg.cprice);
+                }
+            });
+        }
+
+    }
+
+    function change_num(obj,cgoods_uid)
+    {
+        //获取修改值
+        var num = parseInt($(obj).val());
+
+        //判断 违法修改
+        if(num<0)
+        {
+            alert('修改数量不可以为负');
+            //刷新 页面 显示原数据
+            window.location.href = window.location.href;
+            return false;
+        }
+
+        //发送请求
+        $.ajax({
+            data:{id:cgoods_uid,num:num},
+            type:'post',
+            dataType:'json',
+            url:'{:url("changenum")}',
+            success:function (msg) {
+                //修改小计
+               $(obj).parents('div.cart-list').find('span.sum').html(msg.cgoods_price_sum);
+
+                //  更新 购物车商品总数量 总价格
+                $('#sumnumber').html(msg.cnumber);
+                $('.summoney').html(msg.cprice);
+
+            }
+        })
+    }
+
+</script>

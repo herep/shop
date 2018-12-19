@@ -1,0 +1,166 @@
+---------------------------------------------------------------
+[ 2018-12-01T11:01:34+08:00 ] 127.0.0.1 GET /
+[ info ] www.pygshop.com/ [运行时间：0.340782s][吞吐率：2.93req/s] [内存消耗：517.37kb] [文件加载：48]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\IndexController->index[ D:\www\pygshop\application\home\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T11:01:41+08:00 ] 127.0.0.1 GET /
+[ info ] www.pygshop.com/ [运行时间：0.026544s][吞吐率：37.67req/s] [内存消耗：383.93kb] [文件加载：48]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\IndexController->index[ D:\www\pygshop\application\home\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T11:01:43+08:00 ] 127.0.0.1 GET /assets/img/favicon.ico
+[ info ] www.pygshop.com/assets/img/favicon.ico [运行时间：0.228058s][吞吐率：4.38req/s] [内存消耗：262.22kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T11:01:46+08:00 ] 127.0.0.1 GET /admin/manager/login.html
+[ info ] www.pygshop.com/admin/manager/login.html [运行时间：0.255842s][吞吐率：3.91req/s] [内存消耗：310.41kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'manager',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  '/admin/manager/login_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\ManagerController->login[ D:\www\pygshop\application\admin\controller\ManagerController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\manager\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T11:01:46+08:00 ] 127.0.0.1 GET /captcha.html
+[ info ] www.pygshop.com/captcha.html [运行时间：0.204541s][吞吐率：4.89req/s] [内存消耗：280.19kb] [文件加载：39]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\pygshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T13:44:42+08:00 ] 127.0.0.1 GET /
+[ info ] www.pygshop.com/ [运行时间：0.045701s][吞吐率：21.88req/s] [内存消耗：383.93kb] [文件加载：48]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\IndexController->index[ D:\www\pygshop\application\home\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-01T13:44:43+08:00 ] 127.0.0.1 GET /assets/img/favicon.ico
+[ info ] www.pygshop.com/assets/img/favicon.ico [运行时间：0.021595s][吞吐率：46.31req/s] [内存消耗：260.84kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File

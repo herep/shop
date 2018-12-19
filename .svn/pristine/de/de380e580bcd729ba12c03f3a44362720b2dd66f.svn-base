@@ -1,0 +1,160 @@
+{include file='public/head2' /}
+<title>结算页</title>
+<link rel="stylesheet" type="text/css" href="{:config('home_css')}pages-getOrderInfo.css" />
+
+<div class="cart py-container">
+    <!--logoArea-->
+    <div class="logoArea">
+        <div class="fl logo"><span class="title">结算页</span></div>
+        <div class="fr search">
+                <div class="input-append">
+                    <input type="text" type="text" class="input-error input-xxlarge" placeholder="品优购自营" />
+                    <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                </div>
+        </div>
+    </div>
+    <!--主内容-->
+    <form method="post" action="{:url('makeorder')}">
+        <div class="checkout py-container">
+            <div class="checkout-tit">
+                <h4 class="tit-txt">填写并核对订单信息</h4>
+            </div>
+            <div class="checkout-steps">
+                <!--收件人信息-->
+                <div class="step-tit">
+                    <h5>收件人信息<span><a data-toggle="modal" data-target=".edit" data-keyboard="false" class="newadd">新增收货地址</a></span></h5>
+                </div>
+                <div class="step-cont">
+                    <div class="addressInfo">
+                        <ul class="addr-detail">
+                            <li class="addr-item">
+                                {volist name='consignee' id='v' key='k'}
+
+                                <div class="con name">
+                                    <input type="radio" name="cgn_id" value="{$v.cgn_id}"
+                                           {eq name="k" value="1"}checked="checked"{/eq} />
+                                    {$v.cgn_name}</div>
+                                <div class="con address">{$v.cgn_address}<span>{$v.cgn_tel}</span>
+                                    <span class="edittext">
+                                    <a data-toggle="modal" data-target=".edit"
+                                       data-keyboard="false" >编辑</a>&nbsp;&nbsp;
+                                    <a href="javascript:;">删除</a></span>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                {/volist}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <!--支付和送货-->
+                <div class="payshipInfo">
+                    <div class="step-tit">
+                        <h5>支付方式</h5>
+                    </div>
+                    <div class="step-cont">
+                        <ul class="payType">
+                            <li><input type="radio" name="order_pay" value="0" checked="checked" />支付宝</li>
+                            <li><input type="radio" name="order_pay" value="1" />微信</li>
+                            <li><input type="radio" name="order_pay" value="2" />银行卡</li>
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="step-tit">
+                        <h5>送货清单</h5>
+                    </div>
+                    <div class="step-cont">
+                        <ul class="send-detail">
+                            <li>
+                                <div class="sendType">
+                                    <span>配送方式：</span>
+                                    <ul>
+                                        <li>
+                                            <div class="con express">天天快递</div>
+                                            <div class="con delivery">配送时间：预计8月10日（周三）09:00-15:00送达</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sendGoods">
+                                    <span>商品清单：</span>
+                                    {volist name='cgninfos' id='v'}
+                                    <ul class="yui3-g">
+                                        <li class="yui3-u-1-6"><span><img src="{:substr($v.cgoods_logo,1)}"/></span></li>
+                                        <li class="yui3-u-7-12">
+                                            <div class="desc">{$v.cgoods_name}</div>
+                                            <div class="seven">7天无理由退货</div>
+                                        </li>
+                                        <li class="yui3-u-1-12"><div class="price">￥{$v.cgoods_price}</div></li>
+                                        <li class="yui3-u-1-12"><div class="num">X{$v.cgoods_number}</div></li>
+                                        <li class="yui3-u-1-12"><div class="price">{$v.cgoods_price_sum}</div></li>
+                                    </ul>
+                                    {/volist}
+                                </div>
+                            </li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                </div>
+                <div class="linkInfo">
+                    <div class="step-tit">
+                        <h5>发票信息</h5>
+                    </div>
+                    <div class="step-cont">
+                        <span>普通发票（电子）</span>
+                        <span>个人</span>
+                        <span>明细</span>
+                    </div>
+                </div>
+                <div class="cardInfo">
+                    <div class="step-tit">
+                        <h5>使用优惠/抵用</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-summary">
+            <div class="static fr">
+                <div class="list">
+                    <span><i class="number">{$numberprice.cnumber}</i>件商品，总商品金额</span>
+                    <em class="allprice">¥{$numberprice.cprice}</em>
+                </div>
+                <div class="list">
+                    <span>返现：</span>
+                    <em class="money">0.00</em>
+                </div>
+                <div class="list">
+                    <span>运费：</span>
+                    <em class="transport">0.00</em>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix trade">
+            <div class="fc-price">应付金额:　<span class="price">¥{$numberprice.cprice}</span></div>
+            <div class="fc-receiverInfo">寄送至:北京市海淀区三环内 中关村软件园9号楼 收货人：某某某 159****3201</div>
+        </div>
+        <div class="submit">
+            <!--<a class="sui-btn btn-danger btn-xlarge" href="pay.html">提交订单</a>-->
+            <input type="submit" value="提交订单" class="sui-btn btn-danger btn-xlarge" />
+        </div>
+    </form>
+</div>
+<!-- 底部栏位 -->
+{include file='public/foot2' /}
+
+<script type="text/javascript" src="{:config('home_js')}all.js"></script>
+<script type="text/javascript" src="{:config('home_js')}pages/getOrderInfo.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

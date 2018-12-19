@@ -1,0 +1,2465 @@
+---------------------------------------------------------------
+[ 2018-12-16T09:48:35+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.779976s][吞吐率：1.28req/s] [内存消耗：837.38kb] [文件加载：62]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.034022s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010179s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_manager` [ RunTime:0.056610s ]
+[ sql ] [ SQL ] SELECT `r`.`role_ps_ids` FROM `sp_manager` `m` INNER JOIN `sp_role` `r` ON `m`.`role_id`=`r`.`role_id` WHERE (  `m`.`mg_id` IS NULL ) AND `m`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.048799s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.016862s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_id` = 0  AND `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_id` = 0  AND `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000845s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:48:35+08:00 ] 127.0.0.1 GET /admin/manager/login.html
+[ info ] www.pygshop.com/admin/manager/login.html [运行时间：0.121354s][吞吐率：8.24req/s] [内存消耗：354.43kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'manager',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/manager/login_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\ManagerController->login[ D:\www\pygshop\application\admin\controller\ManagerController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\manager\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:48:36+08:00 ] 127.0.0.1 GET /captcha.html
+[ info ] www.pygshop.com/captcha.html [运行时间：0.074570s][吞吐率：13.41req/s] [内存消耗：324.47kb] [文件加载：41]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\pygshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:48:46+08:00 ] 127.0.0.1 POST /admin/manager/login.html
+[ info ] www.pygshop.com/admin/manager/login.html [运行时间：0.201730s][吞吐率：4.96req/s] [内存消耗：532.47kb] [文件加载：60]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'manager',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '46',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.pygshop.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/manager/login_html' => '',
+  'mg_name' => 'admin',
+  'mg_pwd' => '123456',
+  'yanzheng_code' => 'HE5Y',
+)
+[ info ] [ RUN ] app\admin\controller\ManagerController->login[ D:\www\pygshop\application\admin\controller\ManagerController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002717s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_manager` [ RunTime:0.004811s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_manager` WHERE (  `mg_name` = 'admin'  AND `mg_pwd` = 'e10adc3949ba59abbe56e057f20f883e' ) AND `sp_manager`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000708s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:48:46+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.056867s][吞吐率：17.58req/s] [内存消耗：590.30kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.002941s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001507s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.004370s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000920s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000655s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:48:46+08:00 ] 127.0.0.1 GET /admin/index/welcome.html
+[ info ] www.pygshop.com/admin/index/welcome.html [运行时间：0.038680s][吞吐率：25.85req/s] [内存消耗：356.26kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000755s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/welcome_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->welcome[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:48:58+08:00 ] 127.0.0.1 GET /admin/Goods/del
+[ info ] www.pygshop.com/admin/Goods/del [运行时间：0.078949s][吞吐率：12.67req/s] [内存消耗：308.00kb] [文件加载：46]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:48:59+08:00 ] 127.0.0.1 GET /admin/Category/index
+[ info ] www.pygshop.com/admin/Category/index [运行时间：0.171571s][吞吐率：5.83req/s] [内存消耗：359.70kb] [文件加载：54]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000856s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.105023s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Category/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->index[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\category\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:48:59+08:00 ] 127.0.0.1 GET /admin/category/getcateinfo.html
+[ info ] www.pygshop.com/admin/category/getcateinfo.html [运行时间：0.151895s][吞吐率：6.58req/s] [内存消耗：548.10kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000925s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000314s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'getcateinfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/Category/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/category/getcateinfo_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->getcateinfo[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002405s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_category` [ RunTime:0.082398s ]
+[ sql ] [ SQL ] SELECT `cat_id`,`cat_pid`,`cat_name`,`cat_level` FROM `sp_category` WHERE `sp_category`.`delete_time` IS NULL [ RunTime:0.000712s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:49:01+08:00 ] 127.0.0.1 GET /admin/Brand/index
+[ info ] www.pygshop.com/admin/Brand/index [运行时间：0.018544s][吞吐率：53.93req/s] [内存消耗：306.64kb] [文件加载：46]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:49:02+08:00 ] 127.0.0.1 GET /admin/Goods/index
+[ info ] www.pygshop.com/admin/Goods/index [运行时间：0.208560s][吞吐率：4.79req/s] [内存消耗：665.66kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000711s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000197s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010583s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.051454s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 0,4 [ RunTime:0.001195s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:49:26+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：21.246465s][吞吐率：0.05req/s] [内存消耗：549.84kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000846s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000503s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011122s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004495s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544924945  WHERE  `goods_id` = 33 [ RunTime:0.001184s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:49:47+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：40.806059s][吞吐率：0.02req/s] [内存消耗：548.69kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:19.745281s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.001387s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001537s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.006211s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544924966  WHERE  `goods_id` = 33 [ RunTime:0.000832s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:09+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：60.093787s][吞吐率：0.02req/s] [内存消耗：548.69kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:39.016718s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.001084s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '34',
+  'is_pro' => '0',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011180s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.006693s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='0',`update_time`=1544924988  WHERE  `goods_id` = 34 [ RunTime:0.000784s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:30+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：80.194047s][吞吐率：0.01req/s] [内存消耗：548.69kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:59.126064s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000654s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010595s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.013511s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544925009  WHERE  `goods_id` = 33 [ RunTime:0.000899s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:30+08:00 ] 127.0.0.1 GET /admin/Goods/index?page=2
+[ info ] www.pygshop.com/admin/Goods/index?page=2 [运行时间：78.882113s][吞吐率：0.01req/s] [内存消耗：664.13kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:78.813838s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.001245s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+  'page' => '2',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001829s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004525s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 4,4 [ RunTime:0.000662s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:30+08:00 ] 127.0.0.1 GET /admin/Goods/index?page=2
+[ info ] www.pygshop.com/admin/Goods/index?page=2 [运行时间：77.465127s][吞吐率：0.01req/s] [内存消耗：664.13kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:77.415462s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000612s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+  'page' => '2',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006437s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004470s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 4,4 [ RunTime:0.000664s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:30+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：68.936970s][吞吐率：0.01req/s] [内存消耗：590.47kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:68.874931s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014183s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.003779s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000654s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:30+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：64.446916s][吞吐率：0.02req/s] [内存消耗：590.47kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:64.379678s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016012s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.004513s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000603s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:45+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.056602s][吞吐率：17.67req/s] [内存消耗：638.77kb] [文件加载：62]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.003516s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002836s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_manager` [ RunTime:0.005313s ]
+[ sql ] [ SQL ] SELECT `r`.`role_ps_ids` FROM `sp_manager` `m` INNER JOIN `sp_role` `r` ON `m`.`role_id`=`r`.`role_id` WHERE (  `m`.`mg_id` IS NULL ) AND `m`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.005097s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.004546s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_id` = 0  AND `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_id` = 0  AND `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000476s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:45+08:00 ] 127.0.0.1 GET /admin/manager/login.html
+[ info ] www.pygshop.com/admin/manager/login.html [运行时间：0.017778s][吞吐率：56.25req/s] [内存消耗：353.24kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'manager',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/manager/login_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\ManagerController->login[ D:\www\pygshop\application\admin\controller\ManagerController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\manager\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:50:46+08:00 ] 127.0.0.1 GET /captcha.html
+[ info ] www.pygshop.com/captcha.html [运行时间：0.016691s][吞吐率：59.91req/s] [内存消耗：323.28kb] [文件加载：41]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\pygshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:50:50+08:00 ] 127.0.0.1 POST /admin/manager/login.html
+[ info ] www.pygshop.com/admin/manager/login.html [运行时间：0.030993s][吞吐率：32.27req/s] [内存消耗：531.27kb] [文件加载：60]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'manager',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '46',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.pygshop.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/manager/login_html' => '',
+  'mg_name' => 'admin',
+  'mg_pwd' => '123456',
+  'yanzheng_code' => 'AFMT',
+)
+[ info ] [ RUN ] app\admin\controller\ManagerController->login[ D:\www\pygshop\application\admin\controller\ManagerController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001236s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_manager` [ RunTime:0.005625s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_manager` WHERE (  `mg_name` = 'admin'  AND `mg_pwd` = 'e10adc3949ba59abbe56e057f20f883e' ) AND `sp_manager`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000621s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:50+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.041037s][吞吐率：24.37req/s] [内存消耗：590.30kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000777s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011439s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.001678s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:50+08:00 ] 127.0.0.1 GET /admin/index/welcome.html
+[ info ] www.pygshop.com/admin/index/welcome.html [运行时间：0.021034s][吞吐率：47.54req/s] [内存消耗：355.85kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000725s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/welcome_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->welcome[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:50:51+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：73.038521s][吞吐率：0.01req/s] [内存消耗：548.69kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:51.983997s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000345s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '34',
+  'is_pro' => '0',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015632s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004211s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='0',`update_time`=1544925030  WHERE  `goods_id` = 34 [ RunTime:0.000832s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:51+08:00 ] 127.0.0.1 GET /admin/goods/alter/goods_id/34.html
+[ info ] www.pygshop.com/admin/goods/alter/goods_id/34.html [运行时间：54.130499s][吞吐率：0.02req/s] [内存消耗：687.02kb] [文件加载：65]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:53.913663s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000525s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'alter',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/alter/goods_id/34_html' => '',
+  'goods_id' => '34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\GoodsController->alter[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\alter.html [ array (
+  0 => 'picsArray',
+  1 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001629s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.005404s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE (  `goods_id` = 34 ) AND `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods_pics` [ RunTime:0.033202s ]
+[ sql ] [ SQL ] SELECT `pics_mid` FROM `sp_goods_pics` WHERE  `goods_id` = 34 [ RunTime:0.023606s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.048794s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE `sp_type`.`delete_time` IS NULL [ RunTime:0.000640s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:51+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：47.240492s][吞吐率：0.02req/s] [内存消耗：590.47kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:47.178771s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011580s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000606s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:51+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：42.839638s][吞吐率：0.02req/s] [内存消耗：589.84kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:42.768988s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=m7fnk94ipldg55304sgn28aas5',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010185s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.005269s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.001861s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:50:52+08:00 ] 127.0.0.1 GET /admin/Goods/index
+[ info ] www.pygshop.com/admin/Goods/index [运行时间：0.040941s][吞吐率：24.43req/s] [内存消耗：664.04kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000954s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000627s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001293s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001142s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 0,4 [ RunTime:0.000838s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:19+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：21.038276s][吞吐率：0.05req/s] [内存消耗：548.67kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000852s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000253s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '34',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010902s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001281s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544925058  WHERE  `goods_id` = 34 [ RunTime:0.000630s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:40+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：37.750341s][吞吐率：0.03req/s] [内存消耗：548.69kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:16.703272s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.001096s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '0',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001562s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001379s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='0',`update_time`=1544925079  WHERE  `goods_id` = 33 [ RunTime:0.000876s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:40+08:00 ] 127.0.0.1 GET /admin/goods/acc.html
+[ info ] www.pygshop.com/admin/goods/acc.html [运行时间：34.259637s][吞吐率：0.03req/s] [内存消耗：557.79kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:34.084244s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000814s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'acc',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/acc_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->acc[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\acc.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001231s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.004261s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE `sp_type`.`delete_time` IS NULL [ RunTime:0.000660s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:40+08:00 ] 127.0.0.1 GET /admin/category/getcateinfo.html
+[ info ] www.pygshop.com/admin/category/getcateinfo.html [运行时间：0.040312s][吞吐率：24.81req/s] [内存消耗：546.95kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000887s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000280s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'getcateinfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/acc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/category/getcateinfo_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->getcateinfo[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001301s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_category` [ RunTime:0.005588s ]
+[ sql ] [ SQL ] SELECT `cat_id`,`cat_pid`,`cat_name`,`cat_level` FROM `sp_category` WHERE `sp_category`.`delete_time` IS NULL [ RunTime:0.000781s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:45+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.050701s][吞吐率：19.72req/s] [内存消耗：590.45kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000970s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010818s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.005600s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.001047s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:51:45+08:00 ] 127.0.0.1 GET /admin/index/welcome.html
+[ info ] www.pygshop.com/admin/index/welcome.html [运行时间：0.021176s][吞吐率：47.22req/s] [内存消耗：355.88kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001612s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/welcome_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->welcome[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:51:48+08:00 ] 127.0.0.1 GET /admin/Goods/index
+[ info ] www.pygshop.com/admin/Goods/index [运行时间：0.039760s][吞吐率：25.15req/s] [内存消耗：664.07kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000947s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000273s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002146s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.002455s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 0,4 [ RunTime:0.000658s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:52:35+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.054887s][吞吐率：18.22req/s] [内存消耗：590.45kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001795s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010289s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.004403s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000715s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:52:35+08:00 ] 127.0.0.1 GET /admin/index/welcome.html
+[ info ] www.pygshop.com/admin/index/welcome.html [运行时间：0.021590s][吞吐率：46.32req/s] [内存消耗：355.88kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001331s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/welcome_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->welcome[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:52:45+08:00 ] 127.0.0.1 GET /admin/Goods/index
+[ info ] www.pygshop.com/admin/Goods/index [运行时间：0.070099s][吞吐率：14.27req/s] [内存消耗：664.07kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001550s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000254s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011217s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004712s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 0,4 [ RunTime:0.000658s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:08+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：21.057126s][吞吐率：0.05req/s] [内存消耗：548.70kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000710s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000209s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '34',
+  'is_pro' => '0',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010900s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001276s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='0',`update_time`=1544925167  WHERE  `goods_id` = 34 [ RunTime:0.001204s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:29+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：32.547602s][吞吐率：0.03req/s] [内存消耗：548.72kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:11.467771s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.001529s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011340s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.009443s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544925188  WHERE  `goods_id` = 33 [ RunTime:0.000860s ]
+[ error ] [0]�������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\www\pygshop\application\common.php:125]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:38+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.pygshop.com/admin/index/index.html [运行时间：0.052620s][吞吐率：19.00req/s] [内存消耗：655.52kb] [文件加载：61]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000993s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/manager/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'ps_infoA',
+  1 => 'ps_infoB',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001407s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_permission` [ RunTime:0.004675s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '0' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_permission` WHERE (  `ps_level` = '1' ) AND `sp_permission`.`delete_time` IS NULL [ RunTime:0.000804s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:38+08:00 ] 127.0.0.1 GET /admin/index/welcome.html
+[ info ] www.pygshop.com/admin/index/welcome.html [运行时间：0.019817s][吞吐率：50.46req/s] [内存消耗：355.88kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000933s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/welcome_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\IndexController->welcome[ D:\www\pygshop\application\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-16T09:53:42+08:00 ] 127.0.0.1 GET /admin/Goods/index
+[ info ] www.pygshop.com/admin/Goods/index [运行时间：0.040411s][吞吐率：24.75req/s] [内存消耗：664.07kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001571s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000726s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/Goods/index' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->index[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\index.html [ array (
+  0 => 'infos',
+  1 => 'pagelist',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001392s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.004185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE `sp_goods`.`delete_time` IS NULL ORDER BY goods_id desc LIMIT 0,4 [ RunTime:0.000806s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:44+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：0.049493s][吞吐率：20.20req/s] [内存消耗：500.48kb] [文件加载：62]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000699s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000197s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '34',
+  'is_pro' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009989s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001139s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='1',`update_time`=1544925224  WHERE  `goods_id` = 34 [ RunTime:0.000703s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:45+08:00 ] 127.0.0.1 POST /admin/goods/change_promotion.html
+[ info ] www.pygshop.com/admin/goods/change_promotion.html [运行时间：0.059706s][吞吐率：16.75req/s] [内存消耗：500.48kb] [文件加载：62]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000901s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000279s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'change_promotion',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '14',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.pygshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/change_promotion_html' => '',
+  'id' => '33',
+  'is_pro' => '0',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->change_promotion[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010352s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.014471s ]
+[ sql ] [ SQL ] UPDATE `sp_goods`  SET `is_promotion`='0',`update_time`=1544925225  WHERE  `goods_id` = 33 [ RunTime:0.000812s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:50+08:00 ] 127.0.0.1 GET /admin/goods/alter/goods_id/34.html
+[ info ] www.pygshop.com/admin/goods/alter/goods_id/34.html [运行时间：0.067631s][吞吐率：14.79req/s] [内存消耗：621.78kb] [文件加载：65]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001241s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000473s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'alter',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/alter/goods_id/34_html' => '',
+  'goods_id' => '34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\GoodsController->alter[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\alter.html [ array (
+  0 => 'picsArray',
+  1 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011960s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.005967s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE (  `goods_id` = 34 ) AND `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods_pics` [ RunTime:0.002457s ]
+[ sql ] [ SQL ] SELECT `pics_mid` FROM `sp_goods_pics` WHERE  `goods_id` = 34 [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.006716s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE `sp_type`.`delete_time` IS NULL [ RunTime:0.000645s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:50+08:00 ] 127.0.0.1 GET /admin/category/getcateinfo.html
+[ info ] www.pygshop.com/admin/category/getcateinfo.html [运行时间：0.040190s][吞吐率：24.88req/s] [内存消耗：546.96kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000998s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000264s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'getcateinfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/alter/goods_id/34.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/category/getcateinfo_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->getcateinfo[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001176s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_category` [ RunTime:0.004429s ]
+[ sql ] [ SQL ] SELECT `cat_id`,`cat_pid`,`cat_name`,`cat_level` FROM `sp_category` WHERE `sp_category`.`delete_time` IS NULL [ RunTime:0.000875s ]
+---------------------------------------------------------------
+[ 2018-12-16T09:53:50+08:00 ] 127.0.0.1 GET /admin/attribute/getAttributeType3.html?type_id=1&goods_id=34
+[ info ] www.pygshop.com/admin/attribute/getAttributeType3.html?type_id=1&goods_id=34 [运行时间：0.357586s][吞吐率：2.80req/s] [内存消耗：644.59kb] [文件加载：64]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.034048s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000965s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'attribute',
+    2 => 'getAttributeType3',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/alter/goods_id/34.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/attribute/getAttributeType3_html' => '',
+  'type_id' => '1',
+  'goods_id' => '34',
+)
+[ info ] [ RUN ] app\admin\controller\AttributeController->getAttributeType3[ D:\www\pygshop\application\admin\controller\AttributeController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001152s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_attribute` [ RunTime:0.041441s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_attribute` WHERE (  `type_id` = 1 ) AND `sp_attribute`.`delete_time` IS NULL [ RunTime:0.015460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.004726s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE (  `type_id` IN (1) ) AND `sp_type`.`delete_time` IS NULL [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001156s ]
+[ sql ] [ SQL ] SELECT `goods_attrs` FROM `sp_goods` WHERE (  `type_id` = 1  AND `goods_id` = 34 ) AND `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000522s ]
+---------------------------------------------------------------
+[ 2018-12-16T10:05:26+08:00 ] 127.0.0.1 GET /admin/goods/acc.html
+[ info ] www.pygshop.com/admin/goods/acc.html [运行时间：0.077651s][吞吐率：12.88req/s] [内存消耗：556.71kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.002273s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000639s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'acc',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/acc_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\GoodsController->acc[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\acc.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001494s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.004726s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE `sp_type`.`delete_time` IS NULL [ RunTime:0.000553s ]
+---------------------------------------------------------------
+[ 2018-12-16T10:05:26+08:00 ] 127.0.0.1 GET /admin/category/getcateinfo.html
+[ info ] www.pygshop.com/admin/category/getcateinfo.html [运行时间：0.038335s][吞吐率：26.09req/s] [内存消耗：546.95kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000849s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000249s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'getcateinfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/acc.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/category/getcateinfo_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->getcateinfo[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001382s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_category` [ RunTime:0.005135s ]
+[ sql ] [ SQL ] SELECT `cat_id`,`cat_pid`,`cat_name`,`cat_level` FROM `sp_category` WHERE `sp_category`.`delete_time` IS NULL [ RunTime:0.000851s ]
+---------------------------------------------------------------
+[ 2018-12-16T10:05:31+08:00 ] 127.0.0.1 GET /admin/goods/alter/goods_id/34.html
+[ info ] www.pygshop.com/admin/goods/alter/goods_id/34.html [运行时间：0.051846s][吞吐率：19.29req/s] [内存消耗：621.81kb] [文件加载：65]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.001087s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000316s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'alter',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.pygshop.com/admin/Goods/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/alter/goods_id/34_html' => '',
+  'goods_id' => '34',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\GoodsController->alter[ D:\www\pygshop\application\admin\controller\GoodsController.php ]
+[ info ] [ VIEW ] D:\www\pygshop\public/../application/admin\view\goods\alter.html [ array (
+  0 => 'picsArray',
+  1 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002169s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.001369s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_goods` WHERE (  `goods_id` = 34 ) AND `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods_pics` [ RunTime:0.001788s ]
+[ sql ] [ SQL ] SELECT `pics_mid` FROM `sp_goods_pics` WHERE  `goods_id` = 34 [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.004145s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE `sp_type`.`delete_time` IS NULL [ RunTime:0.000666s ]
+---------------------------------------------------------------
+[ 2018-12-16T10:05:32+08:00 ] 127.0.0.1 GET /admin/category/getcateinfo.html
+[ info ] www.pygshop.com/admin/category/getcateinfo.html [运行时间：0.043901s][吞吐率：22.78req/s] [内存消耗：546.96kb] [文件加载：59]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.000883s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.000235s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'getcateinfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/alter/goods_id/34.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/category/getcateinfo_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\CategoryController->getcateinfo[ D:\www\pygshop\application\admin\controller\CategoryController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001312s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_category` [ RunTime:0.008549s ]
+[ sql ] [ SQL ] SELECT `cat_id`,`cat_pid`,`cat_name`,`cat_level` FROM `sp_category` WHERE `sp_category`.`delete_time` IS NULL [ RunTime:0.000871s ]
+---------------------------------------------------------------
+[ 2018-12-16T10:05:32+08:00 ] 127.0.0.1 GET /admin/attribute/getAttributeType3.html?type_id=1&goods_id=34
+[ info ] www.pygshop.com/admin/attribute/getAttributeType3.html?type_id=1&goods_id=34 [运行时间：0.081741s][吞吐率：12.23req/s] [内存消耗：643.14kb] [文件加载：64]
+[ info ] [ LANG ] D:\www\pygshop\thinkphp\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckLogin @ [ RunTime:0.008237s ]
+[ info ] [ BEHAVIOR ] Run \app\admin\behavior\CheckPermission @ [ RunTime:0.002126s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'attribute',
+    2 => 'getAttributeType3',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.pygshop.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'referer' => 'http://www.pygshop.com/admin/goods/alter/goods_id/34.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=9ce5igdbeurjn5h52vbiqhf3l9',
+)
+[ info ] [ PARAM ] array (
+  '/admin/attribute/getAttributeType3_html' => '',
+  'type_id' => '1',
+  'goods_id' => '34',
+)
+[ info ] [ RUN ] app\admin\controller\AttributeController->getAttributeType3[ D:\www\pygshop\application\admin\controller\AttributeController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001378s ] mysql:host=127.0.0.1;port=3306;dbname=pygshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_attribute` [ RunTime:0.006404s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_attribute` WHERE (  `type_id` = 1 ) AND `sp_attribute`.`delete_time` IS NULL [ RunTime:0.000876s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_type` [ RunTime:0.004967s ]
+[ sql ] [ SQL ] SELECT * FROM `sp_type` WHERE (  `type_id` IN (1) ) AND `sp_type`.`delete_time` IS NULL [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sp_goods` [ RunTime:0.002104s ]
+[ sql ] [ SQL ] SELECT `goods_attrs` FROM `sp_goods` WHERE (  `type_id` = 1  AND `goods_id` = 34 ) AND `sp_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000624s ]

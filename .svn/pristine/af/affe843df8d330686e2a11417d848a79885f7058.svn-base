@@ -1,0 +1,52 @@
+<!--<script type="text/javascript">-->
+    <!--$(function(){-->
+        <!--$('.skin-minimal input').iCheck({-->
+            <!--checkboxClass: 'icheckbox-blue',-->
+            <!--radioClass: 'iradio-blue',-->
+            <!--increaseArea: '20%'-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+<script>
+    $(function(){
+        //绑定点击事件
+        $('#form-member-add').submit(function (evt) {
+            //阻止传统表单提交
+            evt.preventDefault();
+            //收集表单值
+            var shuju  = $(this).serialize();
+            //发送请求
+            $.ajax({
+                url:'{:url(\'acc\')}',
+                data:shuju,
+                dataType:'json',
+                type:'post',
+                success:function(msg)
+                {
+                   if(msg.status=='success')
+                   {
+                       //提示信息
+                       layer.alert('添加成功',{icon:6},function(){
+                           //刷新父类页面
+                           parent.window.location = parent.window.location;
+                           //关闭弹窗
+                           var index = layer.getFrameIndex(window.name);
+                           parent.layer.color(index);
+                       });
+                   }else
+                   {
+
+                       //提示信息
+                       layer.alert('添加成功',{icon:5},function(){
+                           //刷新父类页面
+                           parent.window.location = parent.window.location;
+                           //关闭弹窗
+                           var index = layer.getFrameIndex(window.name);
+                           parent.layer.color(index);
+                       });
+                   }
+                }
+            })
+        })
+    })
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>个人注册</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}all.css" />
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}pages-register.css" />
+</head>
+
+<body>
+<div class="register py-container ">
+    <!--head-->
+    <div class="logoArea">
+        <a href="" class="logo"></a>
+    </div>
+    <!--register-->
+    <div class="registerArea">
+        <h3>注册新用户<span class="go">我有账号，去<a href="login.html" target="_blank">登陆</a></span></h3>
+        <div class="info">
+            <form class="sui-form form-horizontal" method="post" action="{$Request.url}">
+                <div class="control-group">
+                    <label class="control-label">用户名：</label>
+                    <div class="controls">
+                        <input type="text"
+                               placeholder="请输入你的用户名"
+                               name="username"
+                               class="input-xfat input-xlarge"
+                               value="{$shuju.username|default=''}"
+                        >
+                        <span style="color: red;">{$error.username|default=''}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">邮箱：</label>
+                    <div class="controls">
+                        <input type="text"
+                               placeholder="请输入你的邮箱"
+                               name="email"
+                               class="input-xfat input-xlarge"
+                               value="{$shuju.user_email|default=''}"
+                        >
+                    </div>
+                    <span style="color: red;">{$error.user_emaile|default=''}</span>
+                </div>
+                <div class="control-group">
+                    <label for="inputPassword" class="control-label">登录密码：</label>
+                    <div class="controls">
+                        <input type="password"
+                               placeholder="设置登录密码"
+                               class="input-xfat input-xlarge"
+                               name="password"
+                               value="{$shuju.password|default=''}"
+                        >
+                        <span style="color:red;">{$error.password|default=''}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="inputPassword" class="control-label">确认密码：</label>
+                    <div class="controls">
+                        <input type="password"
+                               placeholder="再次确认密码"
+                               class="input-xfat input-xlarge"
+                               name="password2"
+                               value="{$shuju.password2|default=''}"
+                        >
+                        <span style="color:red;">{$error.password2|default=''}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="inputPassword" class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <div class="controls">
+                        <input name="m1" type="checkbox" value="2" checked=""><span>同意协议并注册《品优购用户协议》</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"></label>
+                    <div class="controls btn-reg">
+                        <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="完成注册">
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--foot-->
+    <div class="py-container copyright">
+        <ul>
+            <li>关于我们</li>
+            <li>联系我们</li>
+            <li>联系客服</li>
+            <li>商家入驻</li>
+            <li>营销中心</li>
+            <li>手机品优购</li>
+            <li>销售联盟</li>
+            <li>品优购社区</li>
+        </ul>
+        <div class="address">地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100</div>
+        <div class="beian">京ICP备08001421号京公网安备110108007702
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{:config('home_js')}all.js"></script>
+<script type="text/javascript" src="{:config('home_js')}pages/register.js"></script>
+</body>
+
+</html>

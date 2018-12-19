@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    $(function () {
+        $('#form-member-add').submit(function (evt) {
+            //阻止传统表单提交
+            evt.preventDefault();
+            //收集数据
+            var shuju = $(this).serialize();
+            //发送请求
+            $.ajax({
+                url:"{:url('type/acc')}",
+                data:shuju,
+                type:'post',
+                dataType:'json',
+                success:function (msg) {
+                    //判断
+                    if(msg.status=='success')
+                    {
+                       layer.alert('添加成功',{icon:6},function () {
+                           //刷新父类页面
+                           parent.window.location = parent.window.location;
+                           var index = parent.layer.getFrameIndex(window.name);
+                           parent.layer.close(index);
+                       });
+                    }else
+                    {
+                        layer.alert('添加失败',{icon:5},function () {
+                            parent.window.location = parent.window.location;
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                        })
+                    }
+                }
+
+            })
+        })
+    })
+
+</script>

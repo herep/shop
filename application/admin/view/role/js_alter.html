@@ -1,0 +1,97 @@
+
+<!--/*******************************************复选框点击js********************************************************/-->
+<script type="text/javascript">
+    $(function(){
+        $(".permission-list dt input:checkbox").click(function(){
+            $(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+        });
+        $(".permission-list2 dd input:checkbox").click(function(){
+            var l =$(this).parent().parent().find("input:checked").length;
+            var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+            if($(this).prop("checked")){
+                $(this).closest("dl").find("dt input:checkbox").prop("checked",true);
+                $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
+            }
+            else{
+                if(l==0){
+                    $(this).closest("dl").find("dt input:checkbox").prop("checked",false);
+                }
+                if(l2==0){
+                    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
+                }
+            }
+        });
+
+    });
+</script>
+
+<!--/*******************************************弹出层js**************************************************************/-->
+<script type="text/javascript">
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-编辑*/
+    function admin_role_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-删除*/
+    function admin_role_del(obj,id){
+        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+</script>
+<!--/*************************************************发送请求js*********************************************************/-->
+<script>
+    $(function(){
+       //表单绑定事件
+       $('#form-admin-role-add') .submit(function (evt) {
+           //阻止传统表单 提交
+           evt.preventDefault();
+           //收集表单信息
+           var shuju = $(this).serialize();
+           //发送请求
+           $.ajax({
+               url:'{:url(\'alter\')}',
+               data:shuju,
+               dataType:'json',
+               type:'post',
+               success:function (msg) {
+                  if(msg.status=='success')
+                  {
+                      layer.alert('修改成功',{icon:6},function () {
+                          //刷新父页面
+                          parent.window.location = parent.window.location;
+                          //关闭弹层
+                          var index = parent.layer.getFrameIndex(layer.name);
+                          parent.layer.clear(index);
+
+                      })
+                  }else
+                  {
+                    layer.alert('修改失败',{icon:5},function () {
+                        //刷新父类页面
+                        parent.window.location= parent.window.location;
+                        //关闭弹层
+                        var index = parent.layer.getFrameIndex(layer.name);
+                        parent.layer.clear(index);
+                    })
+                  }
+               }
+
+           })
+       })
+    });
+</script>

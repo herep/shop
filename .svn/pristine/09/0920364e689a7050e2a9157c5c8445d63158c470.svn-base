@@ -1,0 +1,29 @@
+
+
+<script type="text/javascript">
+    /*管理员-角色-添加*/
+    function admin_role_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-编辑*/
+    function admin_role_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*管理员-角色-删除*/
+    function admin_role_del(obj,id){
+        layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                success: function(data){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+</script>
